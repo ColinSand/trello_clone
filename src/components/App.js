@@ -7,10 +7,10 @@ class App extends Component {
     const { lists } = this.props;
     return (
       <div className="App">
-        <h2>Does this render?</h2>
+        <h2>Trello Clone</h2>
         <div style={styles.listsContainer}>
           {lists.map((list) => (
-            <TrelloList title={list.title} cards={list.cards} />
+            <TrelloList key={list.id} title={list.title} cards={list.cards} />
           ))}
         </div>
       </div>
