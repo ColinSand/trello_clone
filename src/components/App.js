@@ -11,7 +11,6 @@ class App extends Component {
         {lists.map((list) => (
           <TrelloList title={list.title} cards={list.cards} />
         ))}
-        <TrelloList title="test" />
       </div>
     );
   }
