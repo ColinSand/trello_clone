@@ -8,13 +8,21 @@ class App extends Component {
     return (
       <div className="App">
         <h2>Does this render?</h2>
-        {lists.map((list) => (
-          <TrelloList title={list.title} cards={list.cards} />
-        ))}
+        <div style={styles.listsContainer}>
+          {lists.map((list) => (
+            <TrelloList title={list.title} cards={list.cards} />
+          ))}
+        </div>
       </div>
     );
   }
 }
+const styles = {
+  listsContainer: {
+    display: "flex",
+    flexDirection: "row ",
+  },
+};
 const mapStateToProps = (state) => ({
   lists: state.lists,
 });
