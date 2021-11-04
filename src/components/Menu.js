@@ -10,9 +10,6 @@ export default function Menu() {
       <NavLink classname="navigation" activeClassName="active" to="/signup">
         Signup Page
       </NavLink>
-      {/* <NavLink className="navigation" activeClassName="active" to="/workspace">
-        Work Space
-      </NavLink> */}
     </nav>
   );
 }
