@@ -1,9 +1,11 @@
 import React from "react";
+import TrelloCard from "./TrelloCard";
 
 const TrelloList = ({ title }) => {
   return (
     <div style={styles.container}>
       <h4>{title}</h4>
+      <TrelloCard></TrelloCard>
     </div>
   );
 };
