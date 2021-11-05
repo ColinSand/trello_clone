@@ -4,6 +4,12 @@ import { connect } from "react-redux";
 import TrelloActionButton from "./TrelloActionButton";
 import { DragDropContext } from "react-beautiful-dnd";
 import { sort } from "../actions";
+import styled from "styled-components";
+
+const ListContainer = styled.div`
+  display: flex;
+  flex-direction: row;
+`;
 
 class App extends Component {
   onDragEnd = (result) => {
@@ -28,7 +34,7 @@ class App extends Component {
         <div className="grandTetonBackground">
           <h2>Trello Clone</h2>
 
-          <div style={styles.listsContainer}>
+          <ListContainer>
             {/* maps out each key on the TrelloList component */}
             {lists.map((list) => (
               <TrelloList
@@ -38,25 +44,14 @@ class App extends Component {
                 cards={list.cards}
               />
             ))}
-            <TrelloActionButton list></TrelloActionButton>
-          </div>
+            <TrelloActionButton list />
+          </ListContainer>
         </div>
       </DragDropContext>
     );
   }
 }
 const styles = {
-  // background: {
-  //   backgroundImage: `url(${grandTeton})`,
-  //   backgroundSize: cover,
-  //   backgroundAttachment: fixed,
-  //   backgroundBlendMode: screen,
-  //   backgroundColor: green,
-  //   fontFamily: Arial,
-  //   Helvetica,
-  //   sansSerif,
-  //   paddingBottom: 100,
-  // },
   listsContainer: {
     display: "flex",
     flexDirection: "row ",
