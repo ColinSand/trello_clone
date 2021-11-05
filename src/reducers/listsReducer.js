@@ -2,6 +2,8 @@ import { CONSTANTS } from "../actions";
 
 let listID = 2;
 let cardID = 4;
+// the following initial state is what is initially displayed on the screen as an example
+// when logging in
 const initialState = [
   {
     title: "Last Episode",
@@ -39,6 +41,9 @@ const initialState = [
 
 const listsReducer = (state = initialState, action) => {
   switch (action.type) {
+    // for the ADD_LIST case the title will be what you type in(action.payload)
+    // the cards are an empty array as there are no card right away.
+    // then the id of the list must be assigned as well so that we know what cards go in the new list
     case CONSTANTS.ADD_LIST:
       const newList = {
         title: action.payload,
@@ -47,6 +52,7 @@ const listsReducer = (state = initialState, action) => {
       };
       listID += 1;
       return [...state, newList];
+
     case CONSTANTS.ADD_CARD:
       const newCard = {
         text: action.payload.text,

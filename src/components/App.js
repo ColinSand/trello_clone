@@ -10,6 +10,7 @@ class App extends Component {
       <div className="App">
         <h2>Trello Clone</h2>
         <div style={styles.listsContainer}>
+          {/* maps out each key on the TrelloList component */}
           {lists.map((list) => (
             <TrelloList
               listID={list.id}
