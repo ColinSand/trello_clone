@@ -56,7 +56,7 @@ const listsReducer = (state = initialState, action) => {
       listID += 1;
       return [...state, newList];
     // these newLists and newCards also use incremented ids to tell them all apart when creating
-    case CONSTANTS.ADD_CARD:
+    case CONSTANTS.ADD_CARD: {
       const newCard = {
         text: action.payload.text,
         id: `card-${cardID}`,
@@ -72,6 +72,23 @@ const listsReducer = (state = initialState, action) => {
           return list;
         }
       });
+      return newState;
+    }
+    case CONSTANTS.DRAG_HAPPENED:
+      const {
+        droppableIdStart,
+        droppableIdEnd,
+        droppableIndexStart,
+        droppableIndexEnd,
+        draggableId,
+      } = action.payload;
+      const newState = [...state];
+      // in the same list
+      if (droppableIdStart === droppableIdEnd) {
+        const list = state.find((list) => droppableIdStart === list.id);
+        const card = list.cards.splice(droppableIndexStart, 1);
+        list.cards.splice(droppableIndexEnd, 0, ...card);
+      }
       return newState;
     default:
       return state;
