@@ -10,8 +10,12 @@ const ListContainer = styled.div`
   border-radius: 3px;
   width: 300px;
   padding: 8px;
-  height: "100%";
+  height: 100%;
   margin-right: 8px;
+`;
+
+const Lists = styled.div`
+  height: 100%;
 `;
 
 const TrelloList = ({ title, cards, listID, index }) => {
@@ -20,10 +24,10 @@ const TrelloList = ({ title, cards, listID, index }) => {
       {(provided) => (
         <ListContainer
           {...provided.draggableProps}
-          ref={provided.innerRef}
           {...provided.dragHandleProps}
+          ref={provided.innerRef}
         >
-          <Droppable droppableId={String(listID)}>
+          <Droppable droppableId={String(listID)} type="card">
             {/* to get Droppable to work the following was wrapped in the "provided" function */}
             {(provided) => (
               <div {...provided.droppableProps} ref={provided.innerRef}>
@@ -37,8 +41,8 @@ const TrelloList = ({ title, cards, listID, index }) => {
                     text={card.text}
                   />
                 ))}
-                <TrelloActionButton listID={listID} />
                 {provided.placeholder}
+                <TrelloActionButton listID={listID} />
               </div>
             )}
           </Droppable>

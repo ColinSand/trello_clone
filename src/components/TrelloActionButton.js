@@ -3,33 +3,12 @@ import { Icon, Card, Button } from "@mui/material";
 import Textarea from "react-textarea-autosize";
 import { connect } from "react-redux";
 import { addList, addCard } from "../actions";
+// import Icon from "@mui/icons-material";
 
 class TrelloActionButton extends React.Component {
-  renderAddButton = () => {
-    const { list } = this.props;
-
-    const buttonText = list ? "Add another list" : "Add another card";
-    const buttonTextOpacity = list ? 1 : 0.5;
-    const buttonTextColor = list ? "white" : "inherit";
-    const buttonTextBackground = list ? "rgba(0,0,0,.15)" : "inherit";
-
-    return (
-      <div
-        onClick={this.openForm}
-        style={{
-          ...styles.openForButtonGroup,
-          opacity: buttonTextOpacity,
-          color: buttonTextColor,
-          backgroundColor: buttonTextBackground,
-        }}
-      >
-        <Icon>add</Icon>
-        <p>{buttonText}</p>
-      </div>
-    );
-  };
   state = {
     formOpen: false,
+    text: "",
   };
   openForm = () => {
     this.setState({
@@ -68,6 +47,30 @@ class TrelloActionButton extends React.Component {
       dispatch(addCard(listID, text));
     }
   };
+  renderAddButton = () => {
+    const { list } = this.props;
+
+    const buttonText = list ? "Add another list" : "Add another card";
+    const buttonTextOpacity = list ? 1 : 0.5;
+    const buttonTextColor = list ? "white" : "inherit";
+    const buttonTextBackground = list ? "rgba(0,0,0,.15)" : "inherit";
+
+    return (
+      <div
+        onClick={this.openForm}
+        style={{
+          ...styles.openForButtonGroup,
+          opacity: buttonTextOpacity,
+          color: buttonTextColor,
+          backgroundColor: buttonTextBackground,
+        }}
+      >
+        <Icon>add</Icon>
+        <p>{buttonText}</p>
+      </div>
+    );
+  };
+
   renderForm = () => {
     const { list } = this.props;
     const placeholder = list
@@ -78,10 +81,10 @@ class TrelloActionButton extends React.Component {
       <div>
         <Card
           style={{
-            overflow: "visible",
             minHeight: 80,
-            minWidth: 272,
             padding: " 6px 8px 2px",
+            marginLeft: 8,
+            marginRight: 8,
           }}
         >
           <Textarea
@@ -123,13 +126,15 @@ const styles = {
     cursor: "pointer",
     borderRadius: 3,
     height: 36,
-    width: 272,
+    marginLeft: 8,
     paddingLeft: 10,
+    paddingRight: 10,
   },
   formButtonGroup: {
     marginTop: 8,
     display: "flex",
     alignItems: "center",
+    marginLeft: 8,
   },
 };
 export default connect()(TrelloActionButton);
