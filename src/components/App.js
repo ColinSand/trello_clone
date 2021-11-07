@@ -5,7 +5,6 @@ import TrelloActionButton from "./TrelloActionButton";
 import { DragDropContext, Droppable } from "react-beautiful-dnd";
 import { sort } from "../actions";
 import styled from "styled-components";
-import teton from "../images/grandTeton.jpeg";
 import grandTeton from "../images/grandTeton.jpeg";
 
 const ListContainer = styled.div`
@@ -20,7 +19,14 @@ const MainBackground = styled.div`
   background-blend-mode: screen;
   font-family: Arial, Helvetica, sans-serif;
   padding-bottom: 100px;
-  min-height: 100%;
+  min-height: 800px;
+  margin: -20px -10px -10px -8px;
+`;
+
+const PageTitle = styled.h2`
+  color: white;
+  text-align: center;
+  padding-top: 10px;
 `;
 
 class App extends Component {
@@ -48,7 +54,7 @@ class App extends Component {
         className="grandTetonBackground"
       >
         <MainBackground>
-          <h2>Trello Clone</h2>
+          <PageTitle> Trello Clone</PageTitle>
           {/* the droppableId can essentially be anything here */}
           <Droppable droppableId="all-lists" direction="horizontal" type="list">
             {(provided) => (
