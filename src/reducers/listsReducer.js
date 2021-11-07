@@ -6,36 +6,18 @@ let cardID = 6;
 // when logging in
 const initialState = [
   {
-    title: "Last Episode",
+    title: "Starting List",
     // the following id sets up a custom string so that react-beautifl-dnd doesnt get confused
     // between cards in different lists
     id: `list-${0}`,
     cards: [
       {
         id: `card-${0}`,
-        text: "we created a static list and static card",
+        text: "Please add as many cards and lists as you would like.",
       },
       {
         id: `card-${1}`,
-        text: "we used a mix between material ui react and tyled components",
-      },
-    ],
-  },
-  {
-    title: "This Episode",
-    id: `list-${1}`,
-    cards: [
-      {
-        id: `card-${2}`,
-        text: "we will create our first reducer",
-      },
-      {
-        id: `card-${3}`,
-        text: "and render many cards on our list with static data",
-      },
-      {
-        id: `card-${4}`,
-        text: "we will also make some little changes i forgot in the last episode ",
+        text: "Lists and cards can be moved to different positions.",
       },
     ],
   },
@@ -90,8 +72,6 @@ const listsReducer = (state = initialState, action) => {
         newState.splice(droppableIndexEnd, 0, ...list);
         return newState;
       }
-
-      // in the same list
 
       if (droppableIdStart === droppableIdEnd) {
         const list = state.find((list) => droppableIdStart === list.id);

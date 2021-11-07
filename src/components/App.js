@@ -7,6 +7,7 @@ import { sort } from "../actions";
 import styled from "styled-components";
 import grandTeton from "../images/grandTeton.jpeg";
 
+// these styled components create custom HTML components with their own styling
 const ListContainer = styled.div`
   display: flex;
   flex-direction: row;
@@ -20,13 +21,14 @@ const MainBackground = styled.div`
   font-family: Arial, Helvetica, sans-serif;
   padding-bottom: 100px;
   min-height: 800px;
-  margin: -20px -10px -10px -8px;
+  margin: -25px -10px -10px -8px;
 `;
 
-const PageTitle = styled.h2`
+const PageTitle = styled.h1`
   color: white;
   text-align: center;
-  padding-top: 10px;
+  padding-top: 45px;
+  padding-bottom: 25px;
 `;
 
 class App extends Component {
@@ -54,7 +56,7 @@ class App extends Component {
         className="grandTetonBackground"
       >
         <MainBackground>
-          <PageTitle> Trello Clone</PageTitle>
+          <PageTitle>Colin Sand's Trello Clone</PageTitle>
           {/* the droppableId can essentially be anything here */}
           <Droppable droppableId="all-lists" direction="horizontal" type="list">
             {(provided) => (
