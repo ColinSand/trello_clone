@@ -11,8 +11,10 @@ import grandTeton from "../images/grandTeton.jpeg";
 const ListContainer = styled.div`
   display: flex;
   flex-direction: row;
+  height: 100%;
 `;
 
+// the MainBackground stypled component does not affect the constrained lists
 const MainBackground = styled.div`
   background-image: url(${grandTeton});
   background-size: cover;
