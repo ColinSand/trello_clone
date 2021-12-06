@@ -9,8 +9,7 @@ import grandTeton from "../images/grandTeton.jpeg";
 
 // these styled components create custom HTML components with their own styling
 const ListContainer = styled.div`
-  display: flex;
-  flex-direction: row;
+  display: inline-flex;
   height: 100%;
 `;
 
