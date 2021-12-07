@@ -13,7 +13,7 @@ const ListContainer = styled.div`
   height: 100%;
 `;
 
-// the MainBackground stypled component does not affect the constrained lists
+// 12/6/21 note: possibly need to use the scroll function to just move around the lists and not the whole page
 const MainBackground = styled.div`
   background-image: url(${grandTeton});
   background-size: cover;
@@ -22,6 +22,8 @@ const MainBackground = styled.div`
   font-family: Arial, Helvetica, sans-serif;
   padding-bottom: 100px;
   min-height: 800px;
+  width: 100vw;
+  // min-width: 2000px;
   margin: -25px -10px -10px -8px;
 `;
 
