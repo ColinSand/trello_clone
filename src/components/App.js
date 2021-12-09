@@ -5,8 +5,7 @@ import TrelloActionButton from "./TrelloActionButton";
 import { DragDropContext, Droppable } from "react-beautiful-dnd";
 import { sort } from "../actions";
 import styled from "styled-components";
-import grandTeton from "../images/grandTeton.jpeg";
-import componentCSS from "./Components.css";
+import componentCSS from "./App.css";
 
 // these styled components create custom HTML components with their own styling
 const ListContainer = styled.div`
