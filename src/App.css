@@ -1,4 +1,5 @@
-.grandTetonBackground {
+/* the grandTetonBackground is not needed as of now due to the app.css in the components directory */
+/* .grandTetonBackground {
   background-image: url("./images/grandTeton.jpeg");
   background-size: cover;
   background-attachment: fixed;
@@ -6,4 +7,4 @@
   background-color: #f3ece8;
   font-family: Arial, Helvetica, sans-serif;
   padding-bottom: 100px;
-}
+} */
