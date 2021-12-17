@@ -17,6 +17,10 @@ const ListContainer = styled.div`
 const Lists = styled.div`
   height: 100%;
 `;
+const ListDeleteButton = styled.button`
+  float: right;
+  margin-right: 5px;
+`;
 
 const TrelloList = ({ title, cards, listID, index }) => {
   return (
@@ -31,7 +35,9 @@ const TrelloList = ({ title, cards, listID, index }) => {
             {/* to get Droppable to work the following was wrapped in the "provided" function */}
             {(provided) => (
               <div {...provided.droppableProps} ref={provided.innerRef}>
-                <h4>{title}</h4>
+                <h4>
+                  {title} <ListDeleteButton>X</ListDeleteButton>
+                </h4>
                 {cards.map((card, index) => (
                   // the card.id here is for later reference
                   <TrelloCard

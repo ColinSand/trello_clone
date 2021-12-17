@@ -13,7 +13,6 @@ const CardContainer = styled.div`
 const CardDeleteButton = styled.button`
   float: left;
   margin-right: 10px;
-  // border: 1px;
 `;
 
 const TrelloCard = ({ text, id, index }) => {
