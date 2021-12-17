@@ -10,9 +10,10 @@ const CardContainer = styled.div`
   margin-bottom: 8px;
 `;
 
-const SmallButton = styled.button`
+const CardDeleteButton = styled.button`
   float: left;
   margin-right: 10px;
+  // border: 1px;
 `;
 
 const TrelloCard = ({ text, id, index }) => {
@@ -27,8 +28,10 @@ const TrelloCard = ({ text, id, index }) => {
         >
           <Card>
             <CardContent>
-              <SmallButton>X</SmallButton>
-              {/* <Button>X</Button> */}
+              {/* possibly switch over to the Material UI button */}
+              {/* <Button style={{ float: "left" }}>X</Button> */}
+              <CardDeleteButton>X</CardDeleteButton>
+
               <Typography gutterBottom>{text}</Typography>
             </CardContent>
           </Card>
